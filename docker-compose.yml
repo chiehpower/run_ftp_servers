@@ -7,20 +7,23 @@ services:
       - "2221:21"
       - "30010-30019:30010-30019"
     environment:
-      PUBLICHOST: "localhost"
-      FTP_USER_NAME: miles
-      FTP_USER_PASS: 123456
-      FTP_USER_HOME: /home/miles
+      PUBLICHOST: "0.0.0.0"
+      FTP_USER_NAME: user
+      FTP_USER_PASS: test123
+      FTP_USER_HOME: /home/ftpusers/user
       FTP_PASSIVE_PORTS: "30010:30019"
-  sftp:
-    image: atmoz/sftp
-    ports:
-        - "2222:22"
-    command: miles:123456:::upload
-  sftpssh:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-        - "2223:22"
-    command: miles::::upload
+    volumes:
+      - ./ftpusers:/home/ftpusers
+
+  # sftp:
+  #   image: atmoz/sftp
+  #   ports:
+  #       - "2222:22"
+  #   command: miles:123456:::upload
+  # sftpssh:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   ports:
+  #       - "2223:22"
+  #   command: miles::::upload

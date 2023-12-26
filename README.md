@@ -29,4 +29,19 @@ sftp://localhost:2223
 使用 `./ssh_host_rsa_key` 私鑰登入
 
 ## FileZilla 使用私鑰登入說明
+
 Edit -> Settings -> `Connection/SFTP` -> Add key file  -> 匯入 `./ssh_host_rsa_key` -> OK
+
+## Usage
+
+If you wanna add a new user in the container, pls use this command.
+
+```
+pure-pw useradd (user name) -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -u ftpuser -d /home/ftpusers/(user name)
+```
+
+Example:
+
+```
+pure-pw useradd chieh -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -u ftpuser -d /home/ftpusers/chieh
+```
