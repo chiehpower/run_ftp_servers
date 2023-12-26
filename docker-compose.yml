@@ -14,6 +14,8 @@ services:
       FTP_PASSIVE_PORTS: "30010:30019"
     volumes:
       - ./ftpusers:/home/ftpusers
+    restart: unless-stopped
+    container_name: FTP_SERVER
 
   # sftp:
   #   image: atmoz/sftp
