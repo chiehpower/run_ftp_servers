@@ -45,3 +45,7 @@ Example:
 ```
 pure-pw useradd chieh -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -u ftpuser -d /home/ftpusers/chieh
 ```
+
+## Reference
+
+- https://linux.die.net/man/8/pure-ftpd
